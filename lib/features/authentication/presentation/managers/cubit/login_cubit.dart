@@ -12,8 +12,7 @@ class LoginCubit extends Cubit<LoginState> {
   IconData iconData = Icons.visibility_off;
   bool ifPasswordVisible = true;
   TextEditingController emailController = TextEditingController();
-  TextEditingController emailForForgetPasswordController =
-      TextEditingController();
+  TextEditingController oldPasswordController = TextEditingController();
 
   TextEditingController passwordController = TextEditingController();
   TextEditingController newPasswordController = TextEditingController();
@@ -22,7 +21,8 @@ class LoginCubit extends Cubit<LoginState> {
   var formKey = GlobalKey<FormState>();
 
   var formVerifyForgetOtpKey = GlobalKey<FormState>();
-  var formVerifyEmailForgetOtpKey = GlobalKey<FormState>();
+  var formForgetPassword = GlobalKey<FormState>();
+  var formAddForgetPassword = GlobalKey<FormState>();
 
   void isVisiblePasswordEye() {
     ifPasswordVisible = !ifPasswordVisible;

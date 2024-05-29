@@ -290,11 +290,11 @@ class S {
     );
   }
 
-  /// `Enter Your Email`
-  String get enterEmail {
+  /// `Enter Your Phone Number`
+  String get enterPhone {
     return Intl.message(
-      'Enter Your Email',
-      name: 'enterEmail',
+      'Enter Your Phone Number',
+      name: 'enterPhone',
       desc: '',
       args: [],
     );
@@ -325,6 +325,36 @@ class S {
     return Intl.message(
       'You dont have any account?',
       name: 'donthaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill the credentials to send the otp`
+  String get fillCredintionToOtp {
+    return Intl.message(
+      'Please fill the credentials to send the otp',
+      name: 'fillCredintionToOtp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done reset password`
+  String get doneResetPassword {
+    return Intl.message(
+      'Done reset password',
+      name: 'doneResetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to log in >  `
+  String get gotoLogin {
+    return Intl.message(
+      'Go to log in >  ',
+      name: 'gotoLogin',
       desc: '',
       args: [],
     );

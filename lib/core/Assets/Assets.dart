@@ -4,4 +4,5 @@ class AssetsData {
   static const onBoarding3 = 'assets/images/onBourding_3.png';
   static const iktsarLogoLogin = 'assets/images/iktsar-login.png';
   static const sudi = 'assets/images/saudi-arabia.png';
+  static const doneResetPassword = 'assets/images/done_resepasswprd.png';
 }

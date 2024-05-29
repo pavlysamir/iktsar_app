@@ -23,8 +23,11 @@
     "password":"Password",
     "confirmPassword":"Confirm Password",
     "resetPassword":"Reset Password",
-    "enterEmail":"Enter Your Email",
+    "enterPhone":"Enter Your Phone Number",
     "home":"Home",
     "mobileNum":"Mobile number",
-    "donthaveAccount":"You dont have any account?"
+    "donthaveAccount":"You dont have any account?",
+    "fillCredintionToOtp":"Please fill the credentials to send the otp",
+"doneResetPassword":"Done reset password",
+"gotoLogin":"Go to log in >  "  
 }

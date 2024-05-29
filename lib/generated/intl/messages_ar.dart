@@ -24,12 +24,17 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
+        "doneResetPassword": MessageLookupByLibrary.simpleMessage(
+            "تم اعادة تعيين كلمة المرور بنجاح"),
         "donthaveAccount":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
-        "enterEmail":
-            MessageLookupByLibrary.simpleMessage("ادخل بريدك الإلكتروني"),
+        "enterPhone": MessageLookupByLibrary.simpleMessage("ادخل رقم الهاتفك"),
+        "fillCredintionToOtp": MessageLookupByLibrary.simpleMessage(
+            "الرجاء تعبئة جميع البيانات المطلوبة"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+        "gotoLogin":
+            MessageLookupByLibrary.simpleMessage("< اذهب لتسجيل الدخول"),
         "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
