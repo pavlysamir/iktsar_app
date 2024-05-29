@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:post_bet/core/api/end_ponits.dart';
-import 'package:post_bet/core/utils/service_locator.dart';
-import 'package:post_bet/core/utils/shared_preferences_cash_helper.dart';
+import 'package:iktsar_app/core/api/end_ponits.dart';
+import 'package:iktsar_app/core/utils/service_locator.dart';
+import 'package:iktsar_app/core/utils/shared_preferences_cash_helper.dart';
 
 class ApiInterceptor extends Interceptor {
   @override

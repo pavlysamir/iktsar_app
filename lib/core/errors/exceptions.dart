@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:post_bet/core/errors/error_model.dart';
+import 'package:iktsar_app/core/errors/error_model.dart';
 
 class ServerException implements Exception {
   final ErrorModel errModel;

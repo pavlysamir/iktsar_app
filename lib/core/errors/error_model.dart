@@ -1,4 +1,4 @@
-import 'package:post_bet/core/api/end_ponits.dart';
+import 'package:iktsar_app/core/api/end_ponits.dart';
 
 class ErrorModel {
   final int? status;

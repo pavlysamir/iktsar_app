@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:post_bet/constants.dart';
+import 'package:iktsar_app/constants.dart';
 
 abstract class Styles {
   static TextStyle textStyle20BoldPoppings = GoogleFonts.poppins(
@@ -63,9 +63,8 @@ abstract class Styles {
     fontWeight: FontWeight.bold,
     color: Colors.white,
   );
-  static TextStyle textStyle20BoldBlack = GoogleFonts.poppins(
+  static TextStyle textStyle20Black = GoogleFonts.poppins(
     fontSize: 20,
-    fontWeight: FontWeight.bold,
     color: kBlackColor,
   );
   static TextStyle textStyle20BoldWhite = GoogleFonts.poppins(
@@ -91,7 +90,7 @@ abstract class Styles {
       fontSize: 14, fontWeight: FontWeight.bold, color: kBlackColor);
 
   static TextStyle textStyle16Black = const TextStyle(
-      fontSize: 16, fontWeight: FontWeight.bold, color: kBlackColor);
+      fontSize: 16, fontWeight: FontWeight.w400, color: kBlackColor);
   static TextStyle textStyle16White = const TextStyle(
       fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white);
 }

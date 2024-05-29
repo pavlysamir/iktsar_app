@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:post_bet/core/api/api_consumer.dart';
-import 'package:post_bet/core/api/api_interceptors.dart';
-import 'package:post_bet/core/api/end_ponits.dart';
-import 'package:post_bet/core/errors/exceptions.dart';
+import 'package:iktsar_app/core/api/api_consumer.dart';
+import 'package:iktsar_app/core/api/api_interceptors.dart';
+import 'package:iktsar_app/core/api/end_ponits.dart';
+import 'package:iktsar_app/core/errors/exceptions.dart';
 
 class DioConsumer extends ApiConsumer {
   final Dio dio;
