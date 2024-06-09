@@ -6,7 +6,7 @@ import 'package:iktsar_app/core/utils/app_router.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_button_large.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_form_field.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_go_navigator.dart';
-import 'package:iktsar_app/features/authentication/presentation/managers/cubit/login_cubit.dart';
+import 'package:iktsar_app/features/authentication/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:iktsar_app/features/authentication/presentation/widgets/custom_text_button_forgot_password.dart';
 import 'package:iktsar_app/features/authentication/presentation/widgets/custom_text_button_navigate_sign_up.dart';
 import 'package:iktsar_app/generated/l10n.dart';
@@ -15,9 +15,8 @@ import '../../../../../../core/utils/styles.dart';
 import '../../../../../../constants.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
-  @override
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
@@ -27,7 +26,7 @@ class LoginScreen extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
             body: Form(
-          key: LoginCubit.get(context)!.formKey,
+          key: LoginCubit.get(context)!.formLoginKey,
           child: Center(
             child: SingleChildScrollView(
               child: Padding(
@@ -41,8 +40,8 @@ class LoginScreen extends StatelessWidget {
                         AssetsData.iktsarLogoLogin,
                       ),
                     ),
-                    const SizedBox(
-                      height: 70,
+                    SizedBox(
+                      height: 70.h,
                     ),
                     Text(S.of(context).login,
                         style: Theme.of(context).textTheme.titleLarge!),
@@ -95,10 +94,13 @@ class LoginScreen extends StatelessWidget {
                       },
                     ),
                     SizedBox(height: 2.h),
-                    CustomTextButtonForgotPassword(function: () {
-                      customJustGoNavigate(
-                          context: context, path: AppRouter.kForgotPassword);
-                    }),
+                    CustomTextButtonForgotPassword(
+                      function: () {
+                        customJustGoNavigate(
+                            context: context, path: AppRouter.kForgotPassword);
+                      },
+                      text: S.of(context).forgotPassword,
+                    ),
                     // state is LoginLoading
                     //    ?
                     // const Center(
@@ -112,16 +114,26 @@ class LoginScreen extends StatelessWidget {
                         textColor: Colors.white,
                         function: () {
                           if (LoginCubit.get(context)!
-                              .formKey
+                              .formLoginKey
                               .currentState!
                               .validate()) {
                             // LoginCubit.get(context)!.signIn();
+
+                            customJustGoNavigate(
+                                context: context, path: AppRouter.kOtpView);
                           }
                         }),
                     const SizedBox(
                       height: 30,
                     ),
-                    const CustomTextButtonToNavigateToSignUp(),
+                    CustomTextButtonToNavigateToSignUp(
+                      function: () {
+                        customJustGoNavigate(
+                            context: context, path: AppRouter.kRegistretion);
+                      },
+                      text: S.of(context).donthaveAccount,
+                      textbutton: S.of(context).register,
+                    ),
 
                     SizedBox(
                       height: 40.h,

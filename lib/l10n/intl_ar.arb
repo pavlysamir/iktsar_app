@@ -26,9 +26,25 @@
 "home": "الصفحة الرئيسية",
 "mobileNum":"رقم الهاتف",
 "donthaveAccount":"ليس لديك حساب؟",
+"AlreadyhaveAccount":"لديك حساب؟",
+
 "fillCredintionToOtp":"الرجاء تعبئة جميع البيانات المطلوبة",
 "doneResetPassword":"تم اعادة تعيين كلمة المرور بنجاح",
-"gotoLogin":"< اذهب لتسجيل الدخول"      
+"gotoLogin":"< اذهب لتسجيل الدخول"  ,
+"verification":"التحقق",
+"verificationDescription":"أدخل الرمز للتحقق من الرسائل القصيرة الخاصة بك",
+"resendtOtp":"اعادة ارسال الرمز؟",
+"verfy":"تحقق",
+"firstName":"الاسم الاول",    
+"lastName":"الاسم الثاني",
+"enerFirstName":"ادخل الاسم الاول",
+"enerLastName":"ادخل الاسم الثاني",
+"enterEmail":"ادخل بريدك الالكتروني"
+
+
+
+
+
 
 
 }

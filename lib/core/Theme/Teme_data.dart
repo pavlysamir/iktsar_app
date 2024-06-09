@@ -84,7 +84,7 @@ import 'package:iktsar_app/core/utils/styles.dart';
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
     cardColor: Colors.white,
-
+    indicatorColor: Colors.black,
     shadowColor: Colors.black.withOpacity(0.2),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
@@ -126,6 +126,8 @@ class AppTheme {
   );
 
   static ThemeData darkTheme = ThemeData(
+    indicatorColor: Colors.white,
+
     cardColor: Colors.black,
     shadowColor: Colors.white.withOpacity(0.2),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(

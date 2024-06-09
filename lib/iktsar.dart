@@ -5,7 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iktsar_app/constants.dart';
 import 'package:iktsar_app/core/Theme/Teme_data.dart';
 import 'package:iktsar_app/core/utils/app_router.dart';
-import 'package:iktsar_app/features/authentication/presentation/managers/cubit/login_cubit.dart';
+import 'package:iktsar_app/core/utils/service_locator.dart';
+import 'package:iktsar_app/features/authentication/data/repo/auth_repo_impl.dart';
+import 'package:iktsar_app/features/authentication/presentation/managers/login_cubit/login_cubit.dart';
+import 'package:iktsar_app/features/authentication/presentation/managers/register_cubit/register_cubit.dart';
 import 'package:iktsar_app/generated/l10n.dart';
 
 class IktsarApp extends StatelessWidget {
@@ -21,6 +24,9 @@ class IktsarApp extends StatelessWidget {
         providers: [
           BlocProvider(
             create: (context) => LoginCubit(),
+          ),
+          BlocProvider(
+            create: (context) => RegisterCubit(getIt.get<AuthRepoImpl>()),
           ),
         ],
         child: MaterialApp.router(

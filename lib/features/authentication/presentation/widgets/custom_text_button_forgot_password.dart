@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:iktsar_app/generated/l10n.dart';
 
 import '../../../../../core/utils/styles.dart';
 
 class CustomTextButtonForgotPassword extends StatelessWidget {
-  const CustomTextButtonForgotPassword({super.key, required this.function});
+  const CustomTextButtonForgotPassword(
+      {super.key, required this.function, required this.text});
   final Function() function;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.bottomRight,
       child: TextButton(
         onPressed: function,
-        child:
-            Text(S.of(context).forgotPassword, style: Styles.textStyle12Orange),
+        child: Text(text, style: Styles.textStyle12Orange),
       ),
     );
   }

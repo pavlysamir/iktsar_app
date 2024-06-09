@@ -6,7 +6,7 @@ import 'package:iktsar_app/core/utils/app_router.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_button_large.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_form_field.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_go_navigator.dart';
-import 'package:iktsar_app/features/authentication/presentation/managers/cubit/login_cubit.dart';
+import 'package:iktsar_app/features/authentication/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:iktsar_app/generated/l10n.dart';
 
 import '../../../../../../core/utils/styles.dart';

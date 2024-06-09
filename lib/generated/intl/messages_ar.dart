@@ -22,20 +22,30 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AlreadyhaveAccount":
+            MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "doneResetPassword": MessageLookupByLibrary.simpleMessage(
             "تم اعادة تعيين كلمة المرور بنجاح"),
         "donthaveAccount":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+        "enerFirstName":
+            MessageLookupByLibrary.simpleMessage("ادخل الاسم الاول"),
+        "enerLastName":
+            MessageLookupByLibrary.simpleMessage("ادخل الاسم الثاني"),
+        "enterEmail":
+            MessageLookupByLibrary.simpleMessage("ادخل بريدك الالكتروني"),
         "enterPhone": MessageLookupByLibrary.simpleMessage("ادخل رقم الهاتفك"),
         "fillCredintionToOtp": MessageLookupByLibrary.simpleMessage(
             "الرجاء تعبئة جميع البيانات المطلوبة"),
+        "firstName": MessageLookupByLibrary.simpleMessage("الاسم الاول"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "gotoLogin":
             MessageLookupByLibrary.simpleMessage("< اذهب لتسجيل الدخول"),
         "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
+        "lastName": MessageLookupByLibrary.simpleMessage("الاسم الثاني"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginEmail": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
@@ -62,9 +72,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "registerName": MessageLookupByLibrary.simpleMessage("الاسم"),
         "registerPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "resendtOtp":
+            MessageLookupByLibrary.simpleMessage("اعادة ارسال الرمز؟"),
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "skip": MessageLookupByLibrary.simpleMessage("تخطى"),
+        "verfy": MessageLookupByLibrary.simpleMessage("تحقق"),
+        "verification": MessageLookupByLibrary.simpleMessage("التحقق"),
+        "verificationDescription": MessageLookupByLibrary.simpleMessage(
+            "أدخل الرمز للتحقق من الرسائل القصيرة الخاصة بك"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا بك في")
       };
 }

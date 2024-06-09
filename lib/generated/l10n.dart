@@ -330,6 +330,16 @@ class S {
     );
   }
 
+  /// `Already have any account?`
+  String get AlreadyhaveAccount {
+    return Intl.message(
+      'Already have any account?',
+      name: 'AlreadyhaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please fill the credentials to send the otp`
   String get fillCredintionToOtp {
     return Intl.message(
@@ -355,6 +365,96 @@ class S {
     return Intl.message(
       'Go to log in >  ',
       name: 'gotoLogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verification`
+  String get verification {
+    return Intl.message(
+      'Verification',
+      name: 'verification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the code to verification your sms`
+  String get verificationDescription {
+    return Intl.message(
+      'Enter the code to verification your sms',
+      name: 'verificationDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend code?`
+  String get resendtOtp {
+    return Intl.message(
+      'Resend code?',
+      name: 'resendtOtp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify`
+  String get verfy {
+    return Intl.message(
+      'Verify',
+      name: 'verfy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First name`
+  String get firstName {
+    return Intl.message(
+      'First name',
+      name: 'firstName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last name`
+  String get lastName {
+    return Intl.message(
+      'Last name',
+      name: 'lastName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter First name`
+  String get enerFirstName {
+    return Intl.message(
+      'Enter First name',
+      name: 'enerFirstName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Last name`
+  String get enerLastName {
+    return Intl.message(
+      'Enter Last name',
+      name: 'enerLastName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Your Email`
+  String get enterEmail {
+    return Intl.message(
+      'Enter Your Email',
+      name: 'enterEmail',
       desc: '',
       args: [],
     );

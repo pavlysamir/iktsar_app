@@ -1,14 +1,9 @@
 class EndPoint {
-  static String baseUrlSubscraption = "https://post-bet.onrender.com";
-  static String baseUrl = "http://195.35.0.65:4000";
-  //'http://195.35.0.65:4000';
-  // "https://post-bet.onrender.com";
-  static String login = "/Auth/login";
-  static String signUp = "/Auth/signUp";
-  static const String baseUrlLinkSocial =
-      'https://app.ayrshare.com/api/profiles/generateJWT';
-  static const String authorizationHeader =
-      'Bearer ZE5QBZX-0EVMJB0-MEZKHHT-H0ZEPEV';
+  static String baseUrl = "https://iktsar.onrender.com/";
+
+  static String login = "user/login";
+  static String signUp = "user/";
+
   static const String contentType = 'application/json';
   static String getOtp = "/Auth/verify-otp";
   static String forgotPassword = "/Auth/forget-password";
@@ -54,7 +49,9 @@ class ApiKey {
   static String token = "token";
   static String message = "message";
   static String id = "id";
-  static String name = "name";
+  static String firstName = "firstName";
+  static String lastName = "lastName";
+
   static String phone = "phone";
   static String confirmPassword = "confirmPassword";
   static String location = "location";

@@ -17,12 +17,14 @@ class LoginCubit extends Cubit<LoginState> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController newPasswordController = TextEditingController();
   TextEditingController verfyNewPasswordOtpController = TextEditingController();
+  TextEditingController otpController = TextEditingController();
 
-  var formKey = GlobalKey<FormState>();
+  var formLoginKey = GlobalKey<FormState>();
 
-  var formVerifyForgetOtpKey = GlobalKey<FormState>();
+  // var formVerifyForgetOtpKey = GlobalKey<FormState>();
   var formForgetPassword = GlobalKey<FormState>();
   var formAddForgetPassword = GlobalKey<FormState>();
+  var formOtpVerification = GlobalKey<FormState>();
 
   void isVisiblePasswordEye() {
     ifPasswordVisible = !ifPasswordVisible;

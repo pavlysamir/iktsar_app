@@ -22,22 +22,30 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AlreadyhaveAccount":
+            MessageLookupByLibrary.simpleMessage("Already have any account?"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "doneResetPassword":
             MessageLookupByLibrary.simpleMessage("Done reset password"),
         "donthaveAccount":
             MessageLookupByLibrary.simpleMessage("You dont have any account?"),
+        "enerFirstName":
+            MessageLookupByLibrary.simpleMessage("Enter First name"),
+        "enerLastName": MessageLookupByLibrary.simpleMessage("Enter Last name"),
+        "enterEmail": MessageLookupByLibrary.simpleMessage("Enter Your Email"),
         "enterPhone":
             MessageLookupByLibrary.simpleMessage("Enter Your Phone Number"),
         "fillCredintiol":
             MessageLookupByLibrary.simpleMessage("Please fill the credentials"),
         "fillCredintionToOtp": MessageLookupByLibrary.simpleMessage(
             "Please fill the credentials to send the otp"),
+        "firstName": MessageLookupByLibrary.simpleMessage("First name"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "gotoLogin": MessageLookupByLibrary.simpleMessage("Go to log in >  "),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
         "login": MessageLookupByLibrary.simpleMessage("Sign in"),
         "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
         "loginEmail": MessageLookupByLibrary.simpleMessage("Email"),
@@ -63,8 +71,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerEmail": MessageLookupByLibrary.simpleMessage("Email"),
         "registerName": MessageLookupByLibrary.simpleMessage("Name"),
         "registerPassword": MessageLookupByLibrary.simpleMessage("Password"),
+        "resendtOtp": MessageLookupByLibrary.simpleMessage("Resend code?"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+        "verfy": MessageLookupByLibrary.simpleMessage("Verify"),
+        "verification": MessageLookupByLibrary.simpleMessage("Verification"),
+        "verificationDescription": MessageLookupByLibrary.simpleMessage(
+            "Enter the code to verification your sms"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome to ")
       };
 }

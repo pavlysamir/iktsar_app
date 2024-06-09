@@ -27,7 +27,20 @@
     "home":"Home",
     "mobileNum":"Mobile number",
     "donthaveAccount":"You dont have any account?",
+    "AlreadyhaveAccount":"Already have any account?",
+
     "fillCredintionToOtp":"Please fill the credentials to send the otp",
 "doneResetPassword":"Done reset password",
-"gotoLogin":"Go to log in >  "  
+"gotoLogin":"Go to log in >  "  ,
+"verification":"Verification",
+"verificationDescription":"Enter the code to verification your sms",
+"resendtOtp":"Resend code?",
+"verfy":"Verify",
+"firstName":"First name",    
+"lastName":"Last name",
+"enerFirstName":"Enter First name",
+"enerLastName":"Enter Last name",
+"enterEmail":"Enter Your Email"
+
+
 }

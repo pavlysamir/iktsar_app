@@ -3,6 +3,8 @@ import 'package:iktsar_app/features/authentication/presentation/views/add_new_pa
 import 'package:iktsar_app/features/authentication/presentation/views/done_reset_password.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/forget_password.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/login_screen.dart';
+import 'package:iktsar_app/features/authentication/presentation/views/otp_screen.dart';
+import 'package:iktsar_app/features/authentication/presentation/views/register_screen.dart';
 import 'package:iktsar_app/features/on_boarding/presentations/on_boarding_view.dart';
 
 abstract class AppRouter {
@@ -13,21 +15,9 @@ abstract class AppRouter {
   static const kForgotPassword = '/ForgotPasswordScreen';
   static const kAddNewPassword = '/AddNEWPasswordScreen';
   static const kVerifyEmail = '/VerifyEmailScreen';
-  static const kHomeScreen = '/HomeScreen';
-  static const kHomeLayOut = '/HomeLayOut';
-  static const kEditProfile = '/EditProfile';
-  static const kCobonsView = '/CobonsView';
-  static const kAddPostView = '/AddPostView';
-  static const kSubscriptionView = '/SubscriptionView';
-  static const kPaymentView = '/PaymentView';
-  static const kChangePassword = '/changePassword';
-  static const kNewChangePassword = '/newChangePassword';
-  static const kVerifyNewChangePassword = '/VerifyNewChangePassword';
-  static const kPrivateChat = '/PrivateChat';
-  static const kAboutUs = '/AboutUs';
+  static const kOtpView = '/OtpView';
+
   static const kDonePassword = '/DonePassword';
-  static const kEnterPromo = '/EnterPromo';
-  static const kMySubscription = '/MySubscription';
 
   static final router = GoRouter(
       initialLocation:
@@ -62,6 +52,14 @@ abstract class AppRouter {
         GoRoute(
           path: kDonePassword,
           builder: (context, state) => const DoneResetPassword(),
+        ),
+        GoRoute(
+          path: kOtpView,
+          builder: (context, state) => const OTPVerificationScreen(),
+        ),
+        GoRoute(
+          path: kRegistretion,
+          builder: (context, state) => const RegisterScreen(),
         ),
       ]);
 }
