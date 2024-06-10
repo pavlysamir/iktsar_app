@@ -23,7 +23,7 @@ class IktsarApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => LoginCubit(),
+            create: (context) => LoginCubit(getIt.get<AuthRepoImpl>()),
           ),
           BlocProvider(
             create: (context) => RegisterCubit(getIt.get<AuthRepoImpl>()),

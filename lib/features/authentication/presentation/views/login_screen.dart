@@ -21,7 +21,17 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
-        // TODO: implement listener
+        if (state is LoginSuccessfully) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(state.message),
+            backgroundColor: Colors.green,
+          ));
+        } else if (state is LoginFailure) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(state.errMessage),
+            backgroundColor: Colors.red,
+          ));
+        }
       },
       builder: (context, state) {
         return Scaffold(
@@ -61,8 +71,9 @@ class LoginScreen extends StatelessWidget {
                     CustomFormField(
                         imagePath: AssetsData.sudi,
                         textInputType: TextInputType.phone,
-                        hintText: '+966',
-                        controller: LoginCubit.get(context)!.emailController,
+                        hintText: '00 000 0000',
+                        controller:
+                            LoginCubit.get(context)!.mobileNumController,
                         validationMassage: (value) {
                           if (value.isEmpty) {
                             return S.of(context).enterPhone;
@@ -108,21 +119,24 @@ class LoginScreen extends StatelessWidget {
                     //     color: kPrimaryKey,
                     //   ))
                     //   :
-                    CustomButtonLarge(
-                        text: S.of(context).loginButton,
-                        color: kPrimaryKey,
-                        textColor: Colors.white,
-                        function: () {
-                          if (LoginCubit.get(context)!
-                              .formLoginKey
-                              .currentState!
-                              .validate()) {
-                            // LoginCubit.get(context)!.signIn();
-
-                            customJustGoNavigate(
-                                context: context, path: AppRouter.kOtpView);
-                          }
-                        }),
+                    state is LoginLoading
+                        ? const Center(
+                            child: CircularProgressIndicator(
+                              color: kPrimaryKey,
+                            ),
+                          )
+                        : CustomButtonLarge(
+                            text: S.of(context).loginButton,
+                            color: kPrimaryKey,
+                            textColor: Colors.white,
+                            function: () {
+                              if (LoginCubit.get(context)!
+                                  .formLoginKey
+                                  .currentState!
+                                  .validate()) {
+                                LoginCubit.get(context)!.login();
+                              }
+                            }),
                     const SizedBox(
                       height: 30,
                     ),

@@ -8,7 +8,6 @@ import 'package:iktsar_app/core/utils/widgets/custom_form_field.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_go_navigator.dart';
 import 'package:iktsar_app/features/authentication/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:iktsar_app/generated/l10n.dart';
-
 import '../../../../../../core/utils/styles.dart';
 import '../../../../../../constants.dart';
 
@@ -60,7 +59,7 @@ class ForgetPassword extends StatelessWidget {
                     CustomFormField(
                         imagePath: AssetsData.sudi,
                         textInputType: TextInputType.phone,
-                        hintText: '+966',
+                        hintText: '00 000 0000',
                         controller: LoginCubit.get(context)!
                             .verfyNewPasswordOtpController,
                         validationMassage: (value) {
@@ -84,7 +83,7 @@ class ForgetPassword extends StatelessWidget {
                             // LoginCubit.get(context)!.signIn();
                             customJustGoNavigate(
                                 context: context,
-                                path: AppRouter.kAddNewPassword);
+                                path: AppRouter.kOtpForgetPass);
                           }
                         }),
                     const SizedBox(

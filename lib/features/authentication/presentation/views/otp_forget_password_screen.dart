@@ -10,8 +10,8 @@ import 'package:iktsar_app/features/authentication/presentation/widgets/custom_t
 import 'package:iktsar_app/generated/l10n.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class OTPVerificationScreen extends StatelessWidget {
-  const OTPVerificationScreen({
+class OTPForgetPasswordVerificationScreen extends StatelessWidget {
+  const OTPForgetPasswordVerificationScreen({
     super.key,
   });
 

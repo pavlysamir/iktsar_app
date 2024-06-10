@@ -1,14 +1,14 @@
 class EndPoint {
   static String baseUrl = "https://iktsar.onrender.com/";
 
-  static String login = "user/login";
+  static String login = "/user/login";
   static String signUp = "user/";
 
   static const String contentType = 'application/json';
   static String getOtp = "/Auth/verify-otp";
   static String forgotPassword = "/Auth/forget-password";
   static String changeForgetPassword = "/Auth/change-forget-password";
-  static String verfyAccount = "/Auth/verifyAccount";
+  static String verfyAccount = "user/verify-account";
 
   static String subscraption = "/plans/subscribe";
 
@@ -41,13 +41,14 @@ class EndPoint {
 class ApiKey {
   static String status = "statusCode";
   static String errorMessage = "message";
-  static String error = "errors";
+  static String errors = "errors";
   static String email = "email";
   static String password = "password";
-  static String otp = "otp";
+  static String mobNumber = "mobileNumber";
+  static String otp = "OTP";
   static String newForgetPassword = "newPassword";
   static String token = "token";
-  static String message = "message";
+
   static String id = "id";
   static String firstName = "firstName";
   static String lastName = "lastName";

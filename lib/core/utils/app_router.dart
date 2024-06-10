@@ -3,6 +3,7 @@ import 'package:iktsar_app/features/authentication/presentation/views/add_new_pa
 import 'package:iktsar_app/features/authentication/presentation/views/done_reset_password.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/forget_password.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/login_screen.dart';
+import 'package:iktsar_app/features/authentication/presentation/views/otp_forget_password_screen.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/otp_screen.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/register_screen.dart';
 import 'package:iktsar_app/features/on_boarding/presentations/on_boarding_view.dart';
@@ -16,6 +17,7 @@ abstract class AppRouter {
   static const kAddNewPassword = '/AddNEWPasswordScreen';
   static const kVerifyEmail = '/VerifyEmailScreen';
   static const kOtpView = '/OtpView';
+  static const kOtpForgetPass = '/OtpForgetPass';
 
   static const kDonePassword = '/DonePassword';
 
@@ -60,6 +62,11 @@ abstract class AppRouter {
         GoRoute(
           path: kRegistretion,
           builder: (context, state) => const RegisterScreen(),
+        ),
+        GoRoute(
+          path: kOtpForgetPass,
+          builder: (context, state) =>
+              const OTPForgetPasswordVerificationScreen(),
         ),
       ]);
 }

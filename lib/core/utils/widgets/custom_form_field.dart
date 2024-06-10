@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/styles.dart';
 
@@ -68,7 +69,18 @@ class CustomFormField extends StatelessWidget {
               ? Padding(
                   padding:
                       const EdgeInsets.all(8.0), // Adjust padding as needed
-                  child: Image.asset(imagePath!),
+                  child: SizedBox(
+                    width: 60.w,
+                    child: Row(
+                      children: [
+                        Image.asset(imagePath!),
+                        SizedBox(
+                          width: 5.w,
+                        ),
+                        const Text('+966')
+                      ],
+                    ),
+                  ),
                 )
               : prefixIcon,
           enabledBorder: outlineInputBorder(context),

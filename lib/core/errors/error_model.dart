@@ -1,20 +1,17 @@
 import 'package:iktsar_app/core/api/end_ponits.dart';
 
 class ErrorModel {
-  final int? status;
   final String? errorMessage;
-  final String? error;
+  final List<dynamic> errors;
 
   ErrorModel({
-    required this.status,
     required this.errorMessage,
-    required this.error,
+    required this.errors,
   });
   factory ErrorModel.fromJson(Map<String, dynamic> jsonData) {
     return ErrorModel(
-      status: jsonData[ApiKey.status],
       errorMessage: jsonData[ApiKey.errorMessage] ?? 'Unknown error',
-      error: jsonData[ApiKey.error] ?? 'Unknown error',
+      errors: jsonData[ApiKey.errors] ?? ['Unknown error'],
     );
   }
 }

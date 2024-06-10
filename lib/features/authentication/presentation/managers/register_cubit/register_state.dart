@@ -22,3 +22,17 @@ class SignUpFailure extends RegisterState {
 
   SignUpFailure({required this.errMessage});
 }
+
+class VerfyOtpLoading extends RegisterState {}
+
+class VerfyOtpSuccess extends RegisterState {
+  final VerifyOtpModle message;
+
+  VerfyOtpSuccess({required this.message});
+}
+
+class VerfyOtpFailure extends RegisterState {
+  final String errMessage;
+
+  VerfyOtpFailure({required this.errMessage});
+}

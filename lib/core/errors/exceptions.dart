@@ -26,9 +26,9 @@ void handleDioExceptions(DioException e) {
         // Handle the case where response is null
         throw ServerException(
             errModel: ErrorModel(
-                errorMessage: 'Connection error',
-                error: 'Connection error',
-                status: 500));
+          errorMessage: 'Connection error',
+          errors: ['Connection error'],
+        ));
       }
 
     case DioExceptionType.unknown:

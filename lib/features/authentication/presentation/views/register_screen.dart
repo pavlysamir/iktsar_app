@@ -8,7 +8,6 @@ import 'package:iktsar_app/core/utils/app_router.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_button_large.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_form_field.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_go_navigator.dart';
-import 'package:iktsar_app/features/authentication/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:iktsar_app/features/authentication/presentation/managers/register_cubit/register_cubit.dart';
 import 'package:iktsar_app/features/authentication/presentation/widgets/custom_text_button_navigate_sign_up.dart';
 import 'package:iktsar_app/generated/l10n.dart';
@@ -131,7 +130,7 @@ class RegisterScreen extends StatelessWidget {
                     CustomFormField(
                         imagePath: AssetsData.sudi,
                         textInputType: TextInputType.phone,
-                        hintText: '+966',
+                        hintText: '00 000 0000',
                         controller:
                             RegisterCubit.get(context)!.mobileNumberController,
                         validationMassage: (value) {
@@ -169,7 +168,8 @@ class RegisterScreen extends StatelessWidget {
                           onPressed: () {
                             RegisterCubit.get(context)!.isVisiblePasswordEye();
                           },
-                          icon: Icon(LoginCubit.get(context)!.iconData),
+                          icon: Icon(
+                              RegisterCubit.get(context)!.iconDataPassword),
                         ),
                         textInputType: TextInputType.visiblePassword,
                         hintText: '*************',
@@ -192,7 +192,8 @@ class RegisterScreen extends StatelessWidget {
                           RegisterCubit.get(context)!
                               .isVisibleConformPasswordEye();
                         },
-                        icon: Icon(LoginCubit.get(context)!.iconData),
+                        icon: Icon(RegisterCubit.get(context)!
+                            .iconDataConfirmPassword),
                       ),
                       textInputType: TextInputType.visiblePassword,
                       hintText: '*************',
@@ -226,9 +227,6 @@ class RegisterScreen extends StatelessWidget {
                                   .currentState!
                                   .validate()) {
                                 RegisterCubit.get(context)!.signUp();
-
-                                customJustGoNavigate(
-                                    context: context, path: AppRouter.kOtpView);
                               }
                             }),
                     const SizedBox(

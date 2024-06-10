@@ -1,18 +1,16 @@
-import 'package:iktsar_app/features/authentication/data/models/register_data_model.dart';
-
 class AuthResponseModle {
   final String message;
-  final AddUserModel addUser;
+  //final AddUserModel addUser;
 
   AuthResponseModle({
     required this.message,
-    required this.addUser,
+    // required this.addUser,
   });
 
   factory AuthResponseModle.fromJson(Map<String, dynamic> json) {
     return AuthResponseModle(
       message: json['message'],
-      addUser: AddUserModel.fromJson(json['addUser']),
+      //addUser: AddUserModel.fromJson(json['addUser']),
     );
   }
 }
