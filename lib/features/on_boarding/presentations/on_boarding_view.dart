@@ -7,7 +7,6 @@ import 'package:iktsar_app/core/utils/app_router.dart';
 import 'package:iktsar_app/core/utils/service_locator.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_go_navigator.dart';
 import 'package:iktsar_app/generated/l10n.dart';
-
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../constants.dart';
 import '../../../core/utils/shared_preferences_cash_helper.dart';

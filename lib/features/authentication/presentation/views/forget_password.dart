@@ -17,7 +17,22 @@ class ForgetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is VerifyForgetPasswordSuccessfully) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(state.message),
+            backgroundColor: Colors.green,
+          ));
+
+          customJustGoNavigate(
+              context: context, path: AppRouter.kOtpForgetPass);
+        } else if (state is VerifyForgetPasswordFailure) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(state.errMessage),
+            backgroundColor: Colors.red,
+          ));
+        }
+      },
       builder: (context, state) {
         return Scaffold(
             body: Form(
@@ -71,21 +86,23 @@ class ForgetPassword extends StatelessWidget {
                     SizedBox(
                       height: 10.h,
                     ),
-                    CustomButtonLarge(
-                        text: S.of(context).next,
-                        color: kPrimaryKey,
-                        textColor: Colors.white,
-                        function: () {
-                          if (LoginCubit.get(context)!
-                              .formForgetPassword
-                              .currentState!
-                              .validate()) {
-                            // LoginCubit.get(context)!.signIn();
-                            customJustGoNavigate(
-                                context: context,
-                                path: AppRouter.kOtpForgetPass);
-                          }
-                        }),
+                    state is VerifyForgetPasswordLoading
+                        ? const Center(
+                            child: CircularProgressIndicator(
+                            color: kPrimaryKey,
+                          ))
+                        : CustomButtonLarge(
+                            text: S.of(context).next,
+                            color: kPrimaryKey,
+                            textColor: Colors.white,
+                            function: () {
+                              if (LoginCubit.get(context)!
+                                  .formForgetPassword
+                                  .currentState!
+                                  .validate()) {
+                                LoginCubit.get(context)!.forgetpassword();
+                              }
+                            }),
                     const SizedBox(
                       height: 30,
                     ),

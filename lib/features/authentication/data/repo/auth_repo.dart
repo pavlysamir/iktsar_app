@@ -22,4 +22,8 @@ abstract class AuthRepo {
     required String mobileNum,
     required String passwword,
   });
+
+  Future<Either<String, String>> forgetpass({
+    required String mobileNum,
+  });
 }

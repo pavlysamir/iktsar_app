@@ -1,6 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iktsar_app/core/api/end_ponits.dart';
+import 'package:iktsar_app/core/utils/service_locator.dart';
+import 'package:iktsar_app/core/utils/shared_preferences_cash_helper.dart';
 import 'package:iktsar_app/features/authentication/data/repo/auth_repo.dart';
 import 'package:meta/meta.dart';
 
@@ -18,6 +21,8 @@ class LoginCubit extends Cubit<LoginState> {
 
   TextEditingController passwordController = TextEditingController();
   TextEditingController newPasswordController = TextEditingController();
+  TextEditingController otpController = TextEditingController();
+
   TextEditingController verfyNewPasswordOtpController = TextEditingController();
 
   var formLoginKey = GlobalKey<FormState>();
@@ -25,6 +30,7 @@ class LoginCubit extends Cubit<LoginState> {
   // var formVerifyForgetOtpKey = GlobalKey<FormState>();
   var formForgetPassword = GlobalKey<FormState>();
   var formAddForgetPassword = GlobalKey<FormState>();
+  var formOtpVerifyForgetPassword = GlobalKey<FormState>();
 
   void isVisiblePasswordEye() {
     ifPasswordVisible = !ifPasswordVisible;
@@ -42,5 +48,21 @@ class LoginCubit extends Cubit<LoginState> {
       (errMessage) => emit(LoginFailure(errMessage: errMessage)),
       (login) => emit(LoginSuccessfully(message: login.message)),
     );
+  }
+
+  forgetpassword() async {
+    emit(VerifyForgetPasswordLoading());
+    final response = await authRepository.forgetpass(
+      mobileNum: verfyNewPasswordOtpController.text,
+    );
+    response.fold(
+        (errMessage) =>
+            emit(VerifyForgetPasswordFailure(errMessage: errMessage)),
+        (forget) {
+      getIt.get<CashHelperSharedPreferences>().saveData(
+          key: ApiKey.mobNumber, value: verfyNewPasswordOtpController.text);
+
+      emit(VerifyForgetPasswordSuccessfully(message: forget));
+    });
   }
 }

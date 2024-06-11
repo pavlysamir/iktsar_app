@@ -1,12 +1,12 @@
 class EndPoint {
   static String baseUrl = "https://iktsar.onrender.com/";
 
-  static String login = "/user/login";
+  static String login = "user/login";
   static String signUp = "user/";
 
   static const String contentType = 'application/json';
-  static String getOtp = "/Auth/verify-otp";
-  static String forgotPassword = "/Auth/forget-password";
+  static String verifyforgetPasswordOtp = "user/verify-otp";
+  static String forgotPassword = "user/forgetpass";
   static String changeForgetPassword = "/Auth/change-forget-password";
   static String verfyAccount = "user/verify-account";
 

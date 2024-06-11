@@ -3,8 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iktsar_app/constants.dart';
 import 'package:iktsar_app/core/Assets/Assets.dart';
+import 'package:iktsar_app/core/utils/app_router.dart';
 import 'package:iktsar_app/core/utils/styles.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_button_large.dart';
+import 'package:iktsar_app/core/utils/widgets/custom_go_navigator.dart';
+import 'package:iktsar_app/features/authentication/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:iktsar_app/features/authentication/presentation/managers/register_cubit/register_cubit.dart';
 import 'package:iktsar_app/features/authentication/presentation/widgets/custom_text_button_forgot_password.dart';
 import 'package:iktsar_app/generated/l10n.dart';
@@ -18,24 +21,24 @@ class OTPForgetPasswordVerificationScreen extends StatelessWidget {
   // Check the OTP validity
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<RegisterCubit, RegisterState>(
+    return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
-        if (state is VerfyOtpSuccess) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(state.message.message),
-            backgroundColor: Colors.green,
-          ));
-        } else if (state is VerfyOtpFailure) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(state.errMessage),
-            backgroundColor: Colors.red,
-          ));
-        }
+        // if (state is VerfyOtpSuccess) {
+        //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        //     content: Text(state.message.message),
+        //     backgroundColor: Colors.green,
+        //   ));
+        // } else if (state is VerfyOtpFailure) {
+        //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        //     content: Text(state.errMessage),
+        //     backgroundColor: Colors.red,
+        //   ));
+        // }
       },
       builder: (context, state) {
         return Scaffold(
           body: Form(
-            key: RegisterCubit.get(context)!.formOtpVerification,
+            key: LoginCubit.get(context)!.formOtpVerifyForgetPassword,
             child: Center(
               child: SingleChildScrollView(
                 child: Padding(
@@ -63,7 +66,7 @@ class OTPForgetPasswordVerificationScreen extends StatelessWidget {
                           cursorColor: Theme.of(context).indicatorColor,
                           appContext: context,
                           length: 4,
-                          controller: RegisterCubit.get(context)!.otpController,
+                          controller: LoginCubit.get(context)!.otpController,
                           onChanged: (value) {},
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -97,14 +100,15 @@ class OTPForgetPasswordVerificationScreen extends StatelessWidget {
                               color: kPrimaryKey,
                               textColor: Colors.white,
                               function: () {
-                                if (RegisterCubit.get(context)!
-                                    .formOtpVerification
+                                if (LoginCubit.get(context)!
+                                    .formOtpVerifyForgetPassword
                                     .currentState!
                                     .validate()) {
-                                  RegisterCubit.get(context)!.verfyAccountOtp();
+                                  // RegisterCubit.get(context)!.verfyAccountOtp();
 
-                                  // customJustGoNavigate(
-                                  //     context: context, path: AppRouter.kOtpView);
+                                  customJustGoNavigate(
+                                      context: context,
+                                      path: AppRouter.kAddNewPassword);
                                 }
                               }),
                       SizedBox(height: 2.h),
