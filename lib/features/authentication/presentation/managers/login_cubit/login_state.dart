@@ -31,3 +31,27 @@ class VerifyForgetPasswordFailure extends LoginState {
   final String errMessage;
   VerifyForgetPasswordFailure({required this.errMessage});
 }
+
+class VerifyForgetPasswordOtpSuccessfully extends LoginState {
+  final String message;
+  VerifyForgetPasswordOtpSuccessfully({required this.message});
+}
+
+class VerifyForgetPasswordOtpLoading extends LoginState {}
+
+class VerifyForgetPasswordOtpFailure extends LoginState {
+  final String errMessage;
+  VerifyForgetPasswordOtpFailure({required this.errMessage});
+}
+
+class ResetNewPasswordSuccessfully extends LoginState {
+  final String message;
+  ResetNewPasswordSuccessfully({required this.message});
+}
+
+class ResetNewPasswordLoading extends LoginState {}
+
+class ResetNewPasswordFailure extends LoginState {
+  final String errMessage;
+  ResetNewPasswordFailure({required this.errMessage});
+}

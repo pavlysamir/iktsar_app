@@ -6,6 +6,7 @@ import 'package:iktsar_app/features/authentication/presentation/views/login_scre
 import 'package:iktsar_app/features/authentication/presentation/views/otp_forget_password_screen.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/otp_screen.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/register_screen.dart';
+import 'package:iktsar_app/features/home/presentation/views/home_screen.dart';
 import 'package:iktsar_app/features/on_boarding/presentations/on_boarding_view.dart';
 
 abstract class AppRouter {
@@ -18,8 +19,8 @@ abstract class AppRouter {
   static const kVerifyEmail = '/VerifyEmailScreen';
   static const kOtpView = '/OtpView';
   static const kOtpForgetPass = '/OtpForgetPass';
-
   static const kDonePassword = '/DonePassword';
+  static const kHomeScreen = '/HomeScreen';
 
   static final router = GoRouter(
       initialLocation:
@@ -33,7 +34,7 @@ abstract class AppRouter {
           //             true
           //         ? kLogin
           //         :
-          kOnBoarding,
+          kHomeScreen,
       routes: [
         GoRoute(
           path: kOnBoarding,
@@ -67,6 +68,10 @@ abstract class AppRouter {
           path: kOtpForgetPass,
           builder: (context, state) =>
               const OTPForgetPasswordVerificationScreen(),
+        ),
+        GoRoute(
+          path: kHomeScreen,
+          builder: (context, state) => const HomeScreen(),
         ),
       ]);
 }

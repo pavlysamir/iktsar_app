@@ -129,4 +129,43 @@ class AuthRepoImpl implements AuthRepo {
       return Left(e.errModel.errorMessage!);
     }
   }
+
+  @override
+  Future<Either<String, String>> verifyForgetPassOtp(
+      {required String mobileNum, required String otp}) async {
+    try {
+      final response = await api.post(
+        EndPoint.verifyforgetPasswordOtp,
+        data: {
+          ApiKey.mobNumber: '966$mobileNum',
+          ApiKey.otp: otp,
+        },
+      );
+
+      return Right(response['message']);
+    } on ServerException catch (e) {
+      return Left(e.errModel.errorMessage!);
+    }
+  }
+
+  @override
+  Future<Either<String, String>> resetNewPassword(
+      {required String mobileNum,
+      required String otp,
+      required String newPassword}) async {
+    try {
+      final response = await api.post(
+        EndPoint.resetPassword,
+        data: {
+          ApiKey.mobNumber: '966$mobileNum',
+          ApiKey.otp: otp,
+          ApiKey.newForgetPassword: newPassword,
+        },
+      );
+
+      return Right(response['message']);
+    } on ServerException catch (e) {
+      return Left(e.errModel.errorMessage!);
+    }
+  }
 }

@@ -17,7 +17,20 @@ class AddNewPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is ResetNewPasswordSuccessfully) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(state.message),
+            backgroundColor: Colors.green,
+          ));
+          customJustGoNavigate(context: context, path: AppRouter.kDonePassword);
+        } else if (state is ResetNewPasswordFailure) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(state.errMessage),
+            backgroundColor: Colors.red,
+          ));
+        }
+      },
       builder: (context, state) {
         return Scaffold(
             body: Form(
@@ -101,21 +114,24 @@ class AddNewPassword extends StatelessWidget {
                     SizedBox(
                       height: 30.h,
                     ),
-                    CustomButtonLarge(
-                        text: S.of(context).next,
-                        color: kPrimaryKey,
-                        textColor: Colors.white,
-                        function: () {
-                          if (LoginCubit.get(context)!
-                              .formAddForgetPassword
-                              .currentState!
-                              .validate()) {
-                            // LoginCubit.get(context)!.signIn();
-                            customJustGoNavigate(
-                                context: context,
-                                path: AppRouter.kDonePassword);
-                          }
-                        }),
+                    state is ResetNewPasswordLoading
+                        ? const Center(
+                            child: CircularProgressIndicator(
+                              color: kPrimaryKey,
+                            ),
+                          )
+                        : CustomButtonLarge(
+                            text: S.of(context).next,
+                            color: kPrimaryKey,
+                            textColor: Colors.white,
+                            function: () {
+                              if (LoginCubit.get(context)!
+                                  .formAddForgetPassword
+                                  .currentState!
+                                  .validate()) {
+                                LoginCubit.get(context)!.resetNewPassword();
+                              }
+                            }),
                     const SizedBox(
                       height: 30,
                     ),

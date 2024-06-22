@@ -3,12 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iktsar_app/constants.dart';
 import 'package:iktsar_app/core/Assets/Assets.dart';
-import 'package:iktsar_app/core/utils/app_router.dart';
 import 'package:iktsar_app/core/utils/styles.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_button_large.dart';
-import 'package:iktsar_app/core/utils/widgets/custom_go_navigator.dart';
 import 'package:iktsar_app/features/authentication/presentation/managers/login_cubit/login_cubit.dart';
-import 'package:iktsar_app/features/authentication/presentation/managers/register_cubit/register_cubit.dart';
 import 'package:iktsar_app/features/authentication/presentation/widgets/custom_text_button_forgot_password.dart';
 import 'package:iktsar_app/generated/l10n.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -23,17 +20,17 @@ class OTPForgetPasswordVerificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
-        // if (state is VerfyOtpSuccess) {
-        //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        //     content: Text(state.message.message),
-        //     backgroundColor: Colors.green,
-        //   ));
-        // } else if (state is VerfyOtpFailure) {
-        //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        //     content: Text(state.errMessage),
-        //     backgroundColor: Colors.red,
-        //   ));
-        // }
+        if (state is VerifyForgetPasswordOtpSuccessfully) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(state.message),
+            backgroundColor: Colors.green,
+          ));
+        } else if (state is VerifyForgetPasswordOtpFailure) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(state.errMessage),
+            backgroundColor: Colors.red,
+          ));
+        }
       },
       builder: (context, state) {
         return Scaffold(
@@ -90,7 +87,7 @@ class OTPForgetPasswordVerificationScreen extends StatelessWidget {
                             color: Theme.of(context).indicatorColor,
                           )),
                       SizedBox(height: 70.h),
-                      state is VerfyOtpLoading
+                      state is VerifyForgetPasswordOtpLoading
                           ? const Center(
                               child: CircularProgressIndicator(
                               color: kPrimaryKey,
@@ -104,11 +101,8 @@ class OTPForgetPasswordVerificationScreen extends StatelessWidget {
                                     .formOtpVerifyForgetPassword
                                     .currentState!
                                     .validate()) {
-                                  // RegisterCubit.get(context)!.verfyAccountOtp();
-
-                                  customJustGoNavigate(
-                                      context: context,
-                                      path: AppRouter.kAddNewPassword);
+                                  LoginCubit.get(context)!
+                                      .verifyForgetPasswordOtp();
                                 }
                               }),
                       SizedBox(height: 2.h),

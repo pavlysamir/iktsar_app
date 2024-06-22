@@ -26,4 +26,15 @@ abstract class AuthRepo {
   Future<Either<String, String>> forgetpass({
     required String mobileNum,
   });
+
+  Future<Either<String, String>> verifyForgetPassOtp({
+    required String mobileNum,
+    required String otp,
+  });
+
+  Future<Either<String, String>> resetNewPassword({
+    required String mobileNum,
+    required String otp,
+    required String newPassword,
+  });
 }

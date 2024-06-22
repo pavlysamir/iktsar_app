@@ -10,7 +10,7 @@ class EndPoint {
   static String changeForgetPassword = "/Auth/change-forget-password";
   static String verfyAccount = "user/verify-account";
 
-  static String subscraption = "/plans/subscribe";
+  static String resetPassword = "user/reset";
 
   static String getUserDataEndPoint(id) {
     return "/User/$id";
@@ -46,7 +46,7 @@ class ApiKey {
   static String password = "password";
   static String mobNumber = "mobileNumber";
   static String otp = "OTP";
-  static String newForgetPassword = "newPassword";
+  static String newForgetPassword = "newPass";
   static String token = "token";
 
   static String id = "id";

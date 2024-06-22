@@ -65,4 +65,44 @@ class LoginCubit extends Cubit<LoginState> {
       emit(VerifyForgetPasswordSuccessfully(message: forget));
     });
   }
+
+  verifyForgetPasswordOtp() async {
+    emit(VerifyForgetPasswordOtpLoading());
+    final response = await authRepository.verifyForgetPassOtp(
+      mobileNum: getIt
+          .get<CashHelperSharedPreferences>()
+          .getData(key: ApiKey.mobNumber),
+      otp: otpController.text,
+    );
+    response.fold(
+        (errMessage) =>
+            emit(VerifyForgetPasswordOtpFailure(errMessage: errMessage)),
+        (forget) {
+      getIt
+          .get<CashHelperSharedPreferences>()
+          .saveData(key: ApiKey.otp, value: otpController.text);
+
+      emit(VerifyForgetPasswordOtpSuccessfully(message: forget));
+    });
+  }
+
+  resetNewPassword() async {
+    emit(ResetNewPasswordLoading());
+    final response = await authRepository.resetNewPassword(
+      mobileNum: getIt
+          .get<CashHelperSharedPreferences>()
+          .getData(key: ApiKey.mobNumber),
+      otp: getIt.get<CashHelperSharedPreferences>().getData(key: ApiKey.otp),
+      newPassword: newPasswordController.text,
+    );
+    response.fold(
+        (errMessage) => emit(ResetNewPasswordFailure(errMessage: errMessage)),
+        (forget) {
+      getIt
+          .get<CashHelperSharedPreferences>()
+          .saveData(key: ApiKey.otp, value: otpController.text);
+
+      emit(ResetNewPasswordSuccessfully(message: forget));
+    });
+  }
 }
