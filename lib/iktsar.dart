@@ -9,6 +9,7 @@ import 'package:iktsar_app/core/utils/service_locator.dart';
 import 'package:iktsar_app/features/authentication/data/repo/auth_repo_impl.dart';
 import 'package:iktsar_app/features/authentication/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:iktsar_app/features/authentication/presentation/managers/register_cubit/register_cubit.dart';
+import 'package:iktsar_app/features/home/presentation/managers/cubit/home_cubit.dart';
 import 'package:iktsar_app/generated/l10n.dart';
 
 class IktsarApp extends StatelessWidget {
@@ -27,6 +28,9 @@ class IktsarApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => RegisterCubit(getIt.get<AuthRepoImpl>()),
+          ),
+          BlocProvider(
+            create: (context) => HomeCubit(),
           ),
         ],
         child: MaterialApp.router(

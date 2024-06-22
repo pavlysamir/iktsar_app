@@ -40,7 +40,14 @@
 "lastName":"Last name",
 "enerFirstName":"Enter First name",
 "enerLastName":"Enter Last name",
-"enterEmail":"Enter Your Email"
+"enterEmail":"Enter Your Email",
+"Home":"Home",
+"Services":"Services",
+"Activity":"Activity",
+"Profile":"Profile",
+"Settings":"Settings",
+"Logout":"Logout",
+"whreTo":"Where to?"
 
 
 }
