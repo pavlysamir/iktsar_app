@@ -47,7 +47,9 @@
 "Profile":"Profile",
 "Settings":"Settings",
 "Logout":"Logout",
-"whreTo":"Where to?"
+"whreTo":"Where to?",
+"confirmDestination":"Confirm Destination",
+"planYourRide":"Plan your ride"
 
 
 }

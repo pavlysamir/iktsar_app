@@ -30,6 +30,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "Services": MessageLookupByLibrary.simpleMessage("Services"),
         "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "confirmDestination":
+            MessageLookupByLibrary.simpleMessage("Confirm Destination"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "doneResetPassword":
@@ -72,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onBoardingSlider3subTitle1": MessageLookupByLibrary.simpleMessage(
             "Welcome as you learn a world changing skill to get a better job. "),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "planYourRide": MessageLookupByLibrary.simpleMessage("Plan your ride"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registerButton": MessageLookupByLibrary.simpleMessage("Register"),
         "registerEmail": MessageLookupByLibrary.simpleMessage("Email"),

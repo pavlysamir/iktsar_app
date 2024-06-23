@@ -529,6 +529,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Confirm Destination`
+  String get confirmDestination {
+    return Intl.message(
+      'Confirm Destination',
+      name: 'confirmDestination',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Plan your ride`
+  String get planYourRide {
+    return Intl.message(
+      'Plan your ride',
+      name: 'planYourRide',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

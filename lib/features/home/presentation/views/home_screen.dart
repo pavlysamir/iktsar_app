@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iktsar_app/constants.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_button_large.dart';
 import 'package:iktsar_app/features/home/presentation/managers/cubit/home_cubit.dart';
+import 'package:iktsar_app/features/home/presentation/widgets/custom_bottom_sheet_method.dart';
 import 'package:iktsar_app/features/home/presentation/widgets/custom_drawer.dart';
 import 'package:iktsar_app/generated/l10n.dart';
 
@@ -78,48 +79,22 @@ class HomeScreen extends StatelessWidget {
                           GestureDetector(
                             onTap: () {
                               // HomeCubit.get(context)!.isExpanded = true;
-                              showModalBottomSheet(
-                                context: context,
-                                isScrollControlled: true,
-                                shape: const RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.vertical(
-                                      top: Radius.circular(10)),
-                                ),
-                                builder: (BuildContext context) {
-                                  return Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      const TextField(
-                                        decoration: InputDecoration(
-                                          hintText: 'Additional field 1',
-                                          border: InputBorder.none,
-                                        ),
-                                      ),
-                                      SizedBox(height: 16.h),
-                                      const TextField(
-                                        decoration: InputDecoration(
-                                          hintText: 'Additional field 2',
-                                          border: InputBorder.none,
-                                        ),
-                                      ),
-                                      SizedBox(height: 16.h),
-                                      const TextField(
-                                        decoration: InputDecoration(
-                                          hintText: 'Additional field 3',
-                                          border: InputBorder.none,
-                                        ),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
+                              customBottomSheet(context);
                             },
                             child: Container(
                                 height: 60.h,
                                 width: double.infinity,
                                 decoration: BoxDecoration(
-                                  color: Colors.grey[300],
+                                  color: Colors.white,
                                   borderRadius: BorderRadius.circular(10.h),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 2,
+                                      blurRadius: 4,
+                                      //offset: const Offset(0, 2), // changes position of shadow
+                                    ),
+                                  ],
                                 ),
                                 child: Center(
                                   child: ListTile(
@@ -137,10 +112,12 @@ class HomeScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 20.h),
                           CustomButtonLarge(
-                              text: 'Done',
+                              text: S.of(context).confirmDestination,
                               color: kPrimaryKey,
                               textColor: Colors.white,
-                              function: () {})
+                              function: () {
+                                customBottomSheet(context);
+                              })
                         ],
                       ),
                     ),

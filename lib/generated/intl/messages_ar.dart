@@ -30,6 +30,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "Services": MessageLookupByLibrary.simpleMessage("الخدمات"),
         "Settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
+        "confirmDestination":
+            MessageLookupByLibrary.simpleMessage("تأكيد الوجهة"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "doneResetPassword": MessageLookupByLibrary.simpleMessage(
@@ -72,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onBoardingSlider3subTitle1": MessageLookupByLibrary.simpleMessage(
             "بوستبيت يجعل من السهل عليك إدارة ومشاركة منشوراتك"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "planYourRide": MessageLookupByLibrary.simpleMessage("خطة رحلتك"),
         "register": MessageLookupByLibrary.simpleMessage("تسجيل"),
         "registerButton": MessageLookupByLibrary.simpleMessage("تسجيل"),
         "registerEmail":

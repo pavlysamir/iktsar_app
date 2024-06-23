@@ -97,19 +97,21 @@ class AppTheme {
     primaryColor: kPrimaryKey, // Change primary color as needed
     // Change accent color as needed
     textTheme: TextTheme(
-      bodySmall: Styles.textStyle12BlackBoldPoppings,
-      displayLarge: Styles.textStyle32Black,
-      displayMedium: Styles.textStyle32Orange,
-      bodyLarge: Styles.textStyle12Black,
-      bodyMedium: Styles.textStyle12BoldGrey,
-      titleMedium: const TextStyle(color: Colors.black),
-      titleSmall: Styles.textStyle12Orange,
-      displaySmall: Styles.textStyle20Black,
-      headlineMedium: Styles.textStyle14Grey,
-      headlineSmall: Styles.textStyle14Orange,
-      titleLarge: Styles.textStyle24BoldBlack,
-      labelLarge: Styles.textStyle16White, // Text color for light mode
-    ),
+        bodySmall: Styles.textStyle12BlackBoldPoppings,
+        displayLarge: Styles.textStyle32Black,
+        displayMedium: Styles.textStyle32Orange,
+        bodyLarge: Styles.textStyle12Black,
+        bodyMedium: Styles.textStyle12BoldGrey,
+        titleMedium: const TextStyle(color: Colors.black),
+        titleSmall: Styles.textStyle12Orange,
+        displaySmall: Styles.textStyle20Black,
+        headlineMedium: Styles.textStyle14Grey,
+        headlineSmall: Styles.textStyle14Orange,
+        titleLarge: Styles.textStyle24BoldBlack,
+        labelLarge: Styles.textStyle16White,
+        labelMedium: Styles.textStyle16Black
+        // Text color for light mode
+        ),
     inputDecorationTheme: InputDecorationTheme(
       fillColor: Colors.white,
       enabledBorder: OutlineInputBorder(
@@ -141,20 +143,22 @@ class AppTheme {
 
     primaryColor: kPrimaryKey, // Change primary color as needed
     textTheme: TextTheme(
-      bodySmall: Styles.textStyle12WhiteBoldPoppings,
-      displayLarge: Styles.textStyle32White,
-      displayMedium: Styles.textStyle32Orange,
-      bodyLarge: Styles.textStyle12White,
-      bodyMedium: Styles.textStyle12BoldGrey,
-      titleMedium: const TextStyle(color: Colors.white),
-      titleSmall: Styles.textStyle12Orange,
-      displaySmall: Styles.textStyle20BoldWhite,
-      headlineMedium: Styles.textStyle14Grey,
-      headlineSmall: Styles.textStyle14Orange,
-      titleLarge: Styles.textStyle14White,
-      labelLarge: Styles.textStyle16White,
-      // Text color for light mode
-    ),
+        bodySmall: Styles.textStyle12WhiteBoldPoppings,
+        displayLarge: Styles.textStyle32White,
+        displayMedium: Styles.textStyle32Orange,
+        bodyLarge: Styles.textStyle12White,
+        bodyMedium: Styles.textStyle12BoldGrey,
+        titleMedium: const TextStyle(color: Colors.white),
+        titleSmall: Styles.textStyle12Orange,
+        displaySmall: Styles.textStyle20BoldWhite,
+        headlineMedium: Styles.textStyle14Grey,
+        headlineSmall: Styles.textStyle14Orange,
+        titleLarge: Styles.textStyle14White,
+        labelLarge: Styles.textStyle16White,
+        labelMedium: Styles.textStyle16Black
+
+        // Text color for light mode
+        ),
     brightness: Brightness.dark,
     inputDecorationTheme: InputDecorationTheme(
       fillColor: Colors.black,
