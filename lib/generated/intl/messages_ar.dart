@@ -48,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "fillCredintionToOtp": MessageLookupByLibrary.simpleMessage(
             "الرجاء تعبئة جميع البيانات المطلوبة"),
         "firstName": MessageLookupByLibrary.simpleMessage("الاسم الاول"),
+        "forMe": MessageLookupByLibrary.simpleMessage("خاص بى"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "gotoLogin":

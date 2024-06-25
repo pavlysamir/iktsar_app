@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:iktsar_app/core/Layouts/home_layout.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/add_new_password.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/done_reset_password.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/forget_password.dart';
@@ -6,11 +7,14 @@ import 'package:iktsar_app/features/authentication/presentation/views/login_scre
 import 'package:iktsar_app/features/authentication/presentation/views/otp_forget_password_screen.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/otp_screen.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/register_screen.dart';
-import 'package:iktsar_app/features/home/presentation/views/home_screen.dart';
+import 'package:iktsar_app/features/home/presentation/views/confirm_ride.dart';
+import 'package:iktsar_app/features/home/presentation/views/services_screen.dart';
 import 'package:iktsar_app/features/on_boarding/presentations/on_boarding_view.dart';
 
 abstract class AppRouter {
   static const kWelcomeView = '/';
+  static const kHomeLayout = '/HomeLayout';
+
   static const kOnBoarding = '/OnBoardingScreen';
   static const kRegistretion = '/RegistretionScreen';
   static const kLogin = '/LoginScreen';
@@ -21,6 +25,7 @@ abstract class AppRouter {
   static const kOtpForgetPass = '/OtpForgetPass';
   static const kDonePassword = '/DonePassword';
   static const kHomeScreen = '/HomeScreen';
+  static const kServicesScreen = '/ServicesScreen';
 
   static final router = GoRouter(
       initialLocation:
@@ -34,8 +39,12 @@ abstract class AppRouter {
           //             true
           //         ? kLogin
           //         :
-          kHomeScreen,
+          kHomeLayout,
       routes: [
+        GoRoute(
+          path: kHomeLayout,
+          builder: (context, state) => const HomeLayout(),
+        ),
         GoRoute(
           path: kOnBoarding,
           builder: (context, state) => OnBoardingScreen(),
@@ -71,7 +80,11 @@ abstract class AppRouter {
         ),
         GoRoute(
           path: kHomeScreen,
-          builder: (context, state) => const HomeScreen(),
+          builder: (context, state) => const ConfirmRide(),
+        ),
+        GoRoute(
+          path: kServicesScreen,
+          builder: (context, state) => const ServicesScreen(),
         ),
       ]);
 }

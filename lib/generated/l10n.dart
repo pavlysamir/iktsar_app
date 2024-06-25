@@ -549,6 +549,16 @@ class S {
       args: [],
     );
   }
+
+  /// `For me`
+  String get forMe {
+    return Intl.message(
+      'For me',
+      name: 'forMe',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

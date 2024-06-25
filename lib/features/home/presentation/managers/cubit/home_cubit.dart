@@ -11,6 +11,7 @@ class HomeCubit extends Cubit<HomeState> {
   static HomeCubit? get(context) => BlocProvider.of(context);
 
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+  GlobalKey<ScaffoldState> scaffoldServicesKey = GlobalKey();
 
   bool isExpanded = false;
 

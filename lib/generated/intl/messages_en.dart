@@ -49,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "fillCredintionToOtp": MessageLookupByLibrary.simpleMessage(
             "Please fill the credentials to send the otp"),
         "firstName": MessageLookupByLibrary.simpleMessage("First name"),
+        "forMe": MessageLookupByLibrary.simpleMessage("For me"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "gotoLogin": MessageLookupByLibrary.simpleMessage("Go to log in >  "),

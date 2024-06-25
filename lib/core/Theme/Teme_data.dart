@@ -109,7 +109,9 @@ class AppTheme {
         headlineSmall: Styles.textStyle14Orange,
         titleLarge: Styles.textStyle24BoldBlack,
         labelLarge: Styles.textStyle16White,
-        labelMedium: Styles.textStyle16Black
+        labelMedium: Styles.textStyle16Black,
+        headlineLarge: Styles.textStyle24Black
+
         // Text color for light mode
         ),
     inputDecorationTheme: InputDecorationTheme(
@@ -155,7 +157,8 @@ class AppTheme {
         headlineSmall: Styles.textStyle14Orange,
         titleLarge: Styles.textStyle14White,
         labelLarge: Styles.textStyle16White,
-        labelMedium: Styles.textStyle16Black
+        labelMedium: Styles.textStyle16Black,
+        headlineLarge: Styles.textStyle24Black
 
         // Text color for light mode
         ),

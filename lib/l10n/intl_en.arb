@@ -49,7 +49,12 @@
 "Logout":"Logout",
 "whreTo":"Where to?",
 "confirmDestination":"Confirm Destination",
-"planYourRide":"Plan your ride"
+"planYourRide":"Plan your ride",
+"forMe":"For me",
+"pickUpMyLocation":"Pick up location",
+"goAnyWhere":"Go anywhere, get anything",
+"ride":"Ride",
+"suggestions":"Suggestions"
 
 
 }

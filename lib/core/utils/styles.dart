@@ -60,6 +60,7 @@ abstract class Styles {
   );
   static TextStyle textStyle24Black = GoogleFonts.poppins(
     fontSize: 24,
+    fontWeight: FontWeight.w500,
     color: kBlackColor,
   );
   static TextStyle textStyle24BoldWhite = GoogleFonts.poppins(
