@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iktsar_app/core/Assets/Assets.dart';
+import 'package:iktsar_app/core/utils/app_router.dart';
+import 'package:iktsar_app/core/utils/widgets/custom_go_navigator.dart';
 import 'package:iktsar_app/features/home/presentation/widgets/custom_container_home_actions.dart';
 import 'package:iktsar_app/features/home/presentation/widgets/custom_create_ride_container.dart';
 import 'package:iktsar_app/features/home/presentation/widgets/custom_item_home.dart';
@@ -41,7 +43,10 @@ class HomeScreen extends StatelessWidget {
                 Expanded(
                   child: Expanded(
                     child: CustomContainerHomeActons(
-                      onTap: () {},
+                      onTap: () {
+                        customJustGoNavigate(
+                            context: context, path: AppRouter.kHomeScreen);
+                      },
                       image: AssetsData.travelMan,
                       title: 'Travel',
                     ),

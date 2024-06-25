@@ -54,7 +54,9 @@
 "pickUpMyLocation":"Pick up location",
 "goAnyWhere":"Go anywhere, get anything",
 "ride":"Ride",
-"suggestions":"Suggestions"
+"suggestions":"Suggestions",
+"setting":"Setting",
+"addHome":"Add home"
 
 
 }

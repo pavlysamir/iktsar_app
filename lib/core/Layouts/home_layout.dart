@@ -17,9 +17,7 @@ class _HomeLayoutState extends State<HomeLayout> {
     return BlocProvider(
       create: (context) => HomeLayoutCubit(),
       child: BlocConsumer<HomeLayoutCubit, HomeLayoutState>(
-        listener: (context, state) {
-          // TODO: implement listener
-        },
+        listener: (context, state) {},
         builder: (context, state) {
           var cubit = HomeLayoutCubit.get(context);
 
@@ -47,6 +45,12 @@ class _HomeLayoutState extends State<HomeLayout> {
                       Icons.subscriptions_outlined,
                     ),
                     label: S.of(context).Services,
+                  ),
+                  BottomNavigationBarItem(
+                    icon: const Icon(
+                      Icons.person_outlined,
+                    ),
+                    label: S.of(context).Settings,
                   ),
                 ],
                 currentIndex: cubit.currentIndex,

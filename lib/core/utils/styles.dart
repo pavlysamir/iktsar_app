@@ -82,11 +82,8 @@ abstract class Styles {
     fontWeight: FontWeight.w500,
     color: Colors.grey,
   );
-  static TextStyle textStyle14Orange = GoogleFonts.poppins(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-    color: kPrimaryKey,
-  );
+  static TextStyle textStyle14Blck = const TextStyle(
+      fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black);
 
   static TextStyle textStyle14White = const TextStyle(
       fontSize: 14, fontWeight: FontWeight.normal, color: Colors.white);
