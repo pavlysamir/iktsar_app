@@ -133,7 +133,7 @@ class AppTheme {
     indicatorColor: Colors.white,
 
     cardColor: Colors.black,
-    shadowColor: Colors.white.withOpacity(0.2),
+    shadowColor: Colors.white.withOpacity(0.1),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.black,
       unselectedItemColor: Colors.grey,

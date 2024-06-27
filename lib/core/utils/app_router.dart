@@ -10,6 +10,7 @@ import 'package:iktsar_app/features/authentication/presentation/views/register_s
 import 'package:iktsar_app/features/home/presentation/views/confirm_ride.dart';
 import 'package:iktsar_app/features/home/presentation/views/services_screen.dart';
 import 'package:iktsar_app/features/on_boarding/presentations/on_boarding_view.dart';
+import 'package:iktsar_app/features/setting/presentation/views/setting_screen.dart';
 
 abstract class AppRouter {
   static const kWelcomeView = '/';
@@ -26,6 +27,7 @@ abstract class AppRouter {
   static const kDonePassword = '/DonePassword';
   static const kHomeScreen = '/HomeScreen';
   static const kServicesScreen = '/ServicesScreen';
+  static const kSettingScreen = '/SettingScreen';
 
   static final router = GoRouter(
       initialLocation:
@@ -85,6 +87,10 @@ abstract class AppRouter {
         GoRoute(
           path: kServicesScreen,
           builder: (context, state) => const ServicesScreen(),
+        ),
+        GoRoute(
+          path: kSettingScreen,
+          builder: (context, state) => const SettingScreen(),
         ),
       ]);
 }
