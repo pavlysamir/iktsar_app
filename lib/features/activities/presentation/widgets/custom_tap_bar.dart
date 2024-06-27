@@ -8,9 +8,9 @@ class CustomTapBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> titles = <String>[
-      'All',
-      'Dogs',
-      'Cats',
+      'Upcoming',
+      'Completed',
+      'Cancelled',
     ];
     return Column(
       children: [
@@ -18,8 +18,8 @@ class CustomTapBar extends StatelessWidget implements PreferredSizeWidget {
           padding: const EdgeInsets.all(16.0),
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
+              color: kPinkKey,
+              borderRadius: BorderRadius.circular(10),
               border: Border.all(color: kPrimaryKey),
               boxShadow: [
                 BoxShadow(
@@ -31,10 +31,21 @@ class CustomTapBar extends StatelessWidget implements PreferredSizeWidget {
               ],
             ),
             child: TabBar(
-              indicatorColor: kPrimaryKey,
-              indicatorSize: TabBarIndicatorSize.label,
+              indicatorSize: TabBarIndicatorSize.tab,
+              indicatorColor: Colors.transparent,
+              indicator: BoxDecoration(
+                color: kPrimaryKey,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              //   indicatorColor: kPrimaryKey,
+              //    indicatorSize: TabBarIndicatorSize.label,
+              labelStyle: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
               unselectedLabelStyle:
                   const TextStyle(fontWeight: FontWeight.normal),
+
               tabs: <Widget>[
                 Tab(
                   text: titles[0],
