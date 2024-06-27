@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iktsar_app/constants.dart';
-import 'package:iktsar_app/core/utils/widgets/custom_button_small.dart';
+import 'package:iktsar_app/core/utils/widgets/custom_button_large.dart';
 
 class PopUpDialog extends StatelessWidget {
   const PopUpDialog(
@@ -14,7 +14,9 @@ class PopUpDialog extends StatelessWidget {
       this.textColortcolor1 = Colors.white,
       this.colorButton2 = kPrimaryKey,
       this.textColortcolor2 = Colors.white,
-      required this.function2});
+      required this.function2,
+      required this.btn1,
+      required this.btn2});
   final BuildContext context;
   final Function() function;
   final String title;
@@ -24,6 +26,8 @@ class PopUpDialog extends StatelessWidget {
   final Color textColortcolor1;
   final Color textColortcolor2;
   final Function() function2;
+  final String btn1;
+  final String btn2;
 
   @override
   Widget build(BuildContext context) {
@@ -43,35 +47,37 @@ class PopUpDialog extends StatelessWidget {
           SizedBox(
             height: 20.h,
           ),
-          Text(
-            subTitle,
-            style: Theme.of(context).textTheme.labelLarge,
-            textAlign: TextAlign.center,
-          )
+          subTitle.isEmpty
+              ? const SizedBox()
+              : Text(
+                  subTitle,
+                  style: Theme.of(context).textTheme.labelLarge,
+                  textAlign: TextAlign.center,
+                )
         ],
       ),
       actions: <Widget>[
         Padding(
           padding: const EdgeInsets.only(bottom: 0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          child: Column(
             children: [
-              CustomButtonSmall(
-                borderColor: Colors.red,
-                width: 100,
-                text: "S.of(context).yes",
+              CustomButtonLarge(
+                text: btn1,
+                textColor: Colors.white,
                 color: colorButton1,
                 function: function,
-                textColortcolor: textColortcolor1,
               ),
-              CustomButtonSmall(
-                borderColor: Colors.red,
-                width: 100,
-                text: " S.of(context).no",
-                textColortcolor: textColortcolor2,
-                color: colorButton2,
-                function: function2,
-              ),
+              SizedBox(height: 5.h),
+              TextButton(
+                onPressed: function2,
+                child: Text(
+                  btn2,
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelLarge!
+                      .copyWith(color: Colors.black),
+                ),
+              )
             ],
           ),
         )

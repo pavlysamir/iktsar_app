@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iktsar_app/constants.dart';
 import 'package:iktsar_app/core/utils/app_router.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_go_navigator.dart';
+import 'package:iktsar_app/core/utils/widgets/pop_up_dialog.dart';
 import 'package:iktsar_app/features/setting/presentation/manager/cubit/profile_cubit.dart';
 import 'package:iktsar_app/features/setting/presentation/widgets/custom_item_setting_container.dart';
 import 'package:iktsar_app/generated/l10n.dart';
@@ -127,7 +129,12 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(
                     height: 10.h,
                   ),
-                  const CustomSettingItemContainer(
+                  CustomSettingItemContainer(
+                    onTap: () {
+                      customJustGoNavigate(
+                          context: context,
+                          path: AppRouter.kResetPasswordScreen);
+                    },
                     title: '************',
                   ),
                   SizedBox(height: 30.h),
@@ -143,7 +150,30 @@ class ProfileScreen extends StatelessWidget {
                     title: 'Device Managment',
                   ),
                   SizedBox(height: 30.h),
-                  const CustomSettingItemContainer(
+                  CustomSettingItemContainer(
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) => PopUpDialog(
+                          btn1: 'Confirm Delete Account',
+                          btn2: 'Cancel',
+                          function2: () {
+                            Navigator.pop(context);
+                          },
+                          context: context,
+                          function: () {
+                            //SettingsCubit.get(context).changeLanguage();
+                            Navigator.pop(context);
+                          },
+                          title: 'Are you sure you want to Delete Account?',
+                          subTitle: '',
+                          colorButton1: kPrimaryKey,
+                          colorButton2: Colors.white,
+                          textColortcolor1: Colors.black,
+                          textColortcolor2: Colors.black,
+                        ),
+                      );
+                    },
                     title: 'Delete Account',
                   ),
                 ],

@@ -15,4 +15,30 @@ class ProfileCubit extends Cubit<ProfileState> {
   TextEditingController mobileNumberController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   var foemEditProfile = GlobalKey<FormState>();
+  var foemResetPassword = GlobalKey<FormState>();
+  TextEditingController resetPasswordController = TextEditingController();
+  TextEditingController resetConfirmPasswordController =
+      TextEditingController();
+
+  IconData iconDataPassword = Icons.visibility_off;
+
+  IconData iconDataConfirmPassword = Icons.visibility_off;
+
+  bool ifPasswordVisible = true;
+
+  bool ifConfirmPasswordVisible = true;
+
+  void isVisiblePasswordEye() {
+    ifPasswordVisible = !ifPasswordVisible;
+    iconDataPassword =
+        ifPasswordVisible ? Icons.visibility_off : Icons.remove_red_eye;
+    emit(RegisterPasswordVisibleEye());
+  }
+
+  void isVisibleConformPasswordEye() {
+    ifConfirmPasswordVisible = !ifConfirmPasswordVisible;
+    iconDataConfirmPassword =
+        ifConfirmPasswordVisible ? Icons.visibility_off : Icons.remove_red_eye;
+    emit(RegisterConfirmPasswordVisibleEye());
+  }
 }

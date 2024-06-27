@@ -4,3 +4,7 @@ part of 'profile_cubit.dart';
 sealed class ProfileState {}
 
 final class ProfileInitial extends ProfileState {}
+
+final class RegisterPasswordVisibleEye extends ProfileState {}
+
+final class RegisterConfirmPasswordVisibleEye extends ProfileState {}

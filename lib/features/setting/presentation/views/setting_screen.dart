@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iktsar_app/constants.dart';
+import 'package:iktsar_app/core/utils/widgets/pop_up_dialog.dart';
 import 'package:iktsar_app/features/setting/presentation/widgets/custom_item_setting_container.dart';
 import 'package:iktsar_app/features/setting/presentation/widgets/custom_profile_section.dart';
 import 'package:iktsar_app/generated/l10n.dart';
@@ -73,7 +74,29 @@ class SettingScreen extends StatelessWidget {
                       .labelMedium!
                       .copyWith(color: kPrimaryKey),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) => PopUpDialog(
+                      btn1: 'Confirm sign out',
+                      btn2: 'Cancel',
+                      function2: () {
+                        Navigator.pop(context);
+                      },
+                      context: context,
+                      function: () {
+                        //SettingsCubit.get(context).changeLanguage();
+                        Navigator.pop(context);
+                      },
+                      title: 'Are you sure you want to sign out',
+                      subTitle: '',
+                      colorButton1: kPrimaryKey,
+                      colorButton2: Colors.white,
+                      textColortcolor1: Colors.black,
+                      textColortcolor2: Colors.black,
+                    ),
+                  );
+                },
               )
             ],
           ),
