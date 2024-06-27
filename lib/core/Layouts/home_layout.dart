@@ -41,10 +41,14 @@ class _HomeLayoutState extends State<HomeLayout> {
                     label: S.of(context).home,
                   ),
                   BottomNavigationBarItem(
-                    icon: const Icon(
-                      Icons.subscriptions_outlined,
-                    ),
+                    icon: const Icon(Icons.segment_outlined),
                     label: S.of(context).Services,
+                  ),
+                  const BottomNavigationBarItem(
+                    icon: Icon(
+                      Icons.local_activity_outlined,
+                    ),
+                    label: 'Activities',
                   ),
                   BottomNavigationBarItem(
                     icon: const Icon(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iktsar_app/core/utils/shared_preferences_cash_helper.dart';
+import 'package:iktsar_app/features/activities/presentation/views/activity_screen.dart';
 import 'package:iktsar_app/features/home/presentation/views/home_screen.dart';
 import 'package:iktsar_app/features/home/presentation/views/services_screen.dart';
 import 'package:iktsar_app/features/setting/presentation/views/profile_screen.dart';
@@ -30,6 +31,7 @@ class HomeLayoutCubit extends Cubit<HomeLayoutState> {
   List screens = [
     const HomeScreen(),
     const ServicesScreen(),
+    const ActivitiesScreen(),
     const ProfileScreen()
   ];
 
