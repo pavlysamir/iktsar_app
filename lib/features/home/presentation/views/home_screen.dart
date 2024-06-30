@@ -32,24 +32,20 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Expanded(
-                  child: Expanded(
-                    child: CustomContainerHomeActons(
-                      onTap: () {},
-                      image: AssetsData.car,
-                      title: 'Ride',
-                    ),
+                  child: CustomContainerHomeActons(
+                    onTap: () {},
+                    image: AssetsData.car,
+                    title: 'Ride',
                   ),
                 ),
                 Expanded(
-                  child: Expanded(
-                    child: CustomContainerHomeActons(
-                      onTap: () {
-                        customJustGoNavigate(
-                            context: context, path: AppRouter.kHomeScreen);
-                      },
-                      image: AssetsData.travelMan,
-                      title: 'Travel',
-                    ),
+                  child: CustomContainerHomeActons(
+                    onTap: () {
+                      customJustGoNavigate(
+                          context: context, path: AppRouter.kHomeScreen);
+                    },
+                    image: AssetsData.travelMan,
+                    title: 'Travel',
                   ),
                 ),
                 Expanded(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iktsar_app/core/Assets/Assets.dart';
+import 'package:iktsar_app/features/home/presentation/widgets/list_view_locations_select.dart';
 import 'package:iktsar_app/generated/l10n.dart';
 
 void customBottomSheet(BuildContext context) {
@@ -134,7 +134,7 @@ void customBottomSheet(BuildContext context) {
                         )),
                   ),
                   SizedBox(
-                    width: 4.h,
+                    width: 4.w,
                   ),
                   Center(
                     child: Container(
@@ -154,6 +154,12 @@ void customBottomSheet(BuildContext context) {
                   )
                 ],
               ),
+              SizedBox(
+                height: 24.h,
+              ),
+              const Expanded(
+                child: ListViewlocationsSelect(),
+              )
             ],
           ),
         ),
