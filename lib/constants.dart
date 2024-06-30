@@ -17,3 +17,4 @@ const k323232 = Color(0xff323232);
 
 File? imageFile;
 const profilePic = '';
+const apiGoogleMapsKey = 'AIzaSyCuTilAfnGfkZtIx0T3qf-eOmWZ_N2LpoY';

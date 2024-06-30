@@ -12,6 +12,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
   GlobalKey<ScaffoldState> scaffoldServicesKey = GlobalKey();
+  GlobalKey<ScaffoldState> scaffoldChooseRideKey = GlobalKey();
 
   bool isExpanded = false;
 
