@@ -7,6 +7,7 @@ import 'package:iktsar_app/features/authentication/presentation/views/login_scre
 import 'package:iktsar_app/features/authentication/presentation/views/otp_forget_password_screen.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/otp_screen.dart';
 import 'package:iktsar_app/features/authentication/presentation/views/register_screen.dart';
+import 'package:iktsar_app/features/home/presentation/views/choose_ride_screen.dart';
 import 'package:iktsar_app/features/home/presentation/views/confirm_ride.dart';
 import 'package:iktsar_app/features/home/presentation/views/services_screen.dart';
 import 'package:iktsar_app/features/on_boarding/presentations/on_boarding_view.dart';
@@ -30,6 +31,7 @@ abstract class AppRouter {
   static const kServicesScreen = '/ServicesScreen';
   static const kSettingScreen = '/SettingScreen';
   static const kResetPasswordScreen = '/ResetPasswordScreen';
+  static const kChooseRideScreen = '/ChooseRideScreen';
 
   static final router = GoRouter(
       initialLocation:
@@ -97,6 +99,10 @@ abstract class AppRouter {
         GoRoute(
           path: kResetPasswordScreen,
           builder: (context, state) => const ResetPasswordScreen(),
+        ),
+        GoRoute(
+          path: kChooseRideScreen,
+          builder: (context, state) => const ChooseRideScreen(),
         ),
       ]);
 }

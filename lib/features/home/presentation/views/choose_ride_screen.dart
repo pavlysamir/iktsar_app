@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iktsar_app/constants.dart';
+import 'package:iktsar_app/core/Assets/Assets.dart';
 import 'package:iktsar_app/core/utils/widgets/custom_button_large.dart';
 import 'package:iktsar_app/features/home/presentation/managers/cubit/home_cubit.dart';
 import 'package:iktsar_app/features/home/presentation/widgets/custom_bottom_sheet_method.dart';
 import 'package:iktsar_app/features/home/presentation/widgets/custom_drawer.dart';
 import 'package:iktsar_app/generated/l10n.dart';
 
-class ConfirmRide extends StatelessWidget {
-  const ConfirmRide({super.key});
+class ChooseRideScreen extends StatelessWidget {
+  const ChooseRideScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class ConfirmRide extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   child: GestureDetector(
                     onTap: () {
-                      // HomeCubit.get(context)!.changeIsExpanded();
+                      HomeCubit.get(context)!.changeIsExpanded();
                     },
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 300),
@@ -81,16 +82,26 @@ class ConfirmRide extends StatelessWidget {
                                   ],
                                 ),
                                 child: Center(
-                                  child: ListTile(
-                                    iconColor: kPrimaryKey,
-                                    textColor: kPrimaryKey,
-                                    title: Text(
-                                      S.of(context).whreTo,
-                                      style: ThemeData().textTheme.bodyLarge,
-                                    ),
-                                    trailing: const Icon(Icons.search),
-                                    leading:
-                                        const Icon(Icons.rectangle_rounded),
+                                  child: Row(
+                                    children: [
+                                      Image.asset(AssetsData.car),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'Iktsar',
+                                            style:
+                                                ThemeData().textTheme.bodySmall,
+                                          ),
+                                          const Text(
+                                            '9:24pm. 3min away',
+                                          ),
+                                        ],
+                                      ),
+                                      const Spacer(),
+                                      const Text(
+                                        '40.00R',
+                                      ),
+                                    ],
                                   ),
                                 )),
                           ),
